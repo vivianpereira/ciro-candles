@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- E-commerce name -->
-            <a class="navbar-brand" href="#">Ciro Candles</a>
+            <a class="navbar-brand" href="./index.html">Ciro Candles</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,29 +26,30 @@
             <div class="container d-flex flex-column flex-md-row justify-content-between" id="navbarNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class=" nav-item">
-                        <a class="nav-link" href="candle_details.html">Candles</a>
+                        <a class="nav-link" href="./candle-category.html">Candles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="diffusers_details.html">Diffusers</a>
+                        <a class="nav-link" href="./diffuser-category.html">Diffusers</a>
                     </li>
                 </ul>
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                     <button class="btn btn-outline my-2 my-sm-0" type="submit">Search</button>
-                    <a class="nav-link text-dark nav-link" href="#"><img src="icons/cart.svg" class="pl-lg-4 pr-2">
+                    <a class="nav-link text-dark nav-link" href="./basket.html"><img src="icons/cart.svg"
+                            class="pl-lg-4 pr-2" /></a>
                 </form>
+            </div>
         </nav>
     </header>
 
     <!-- Contains the main content of the website, divided into sections -->
     <main>
-
         <section>
-            <div>
+            <div class="ml-3 mt-3">
                 <h1>Our Collection</h1>
             </div>
 
-            <div class="row row-cols- row-cols-md-3 g-4">
+            <div class="card-deck mb-3">
                 <div class="col">
                     <div class="card">
                         <img src="./images/candles/candle_home.jpg" class="card-img-top">
@@ -58,7 +59,7 @@
                                 scented
                                 candles, unscented candles, soy candles and more.</p>
                         </div>
-                        <div class="card-footer"><a href="diffusers_details.html" class="btn btn-secondary">More
+                        <div class="card-footer"><a href="./candle-category.html" class="btn btn-secondary">More
                                 info</a>
                         </div>
                     </div>
@@ -71,7 +72,7 @@
                             <p class="card-text">Handmade diffusers designed to transform your space into a haven of
                                 tranquility and aromatic bliss.</p>
                         </div>
-                        <div class="card-footer"><a href="diffusers_details.html" class="btn btn-secondary">More
+                        <div class="card-footer"><a href="./diffuser-category.html" class="btn btn-secondary">More
                                 info</a>
                         </div>
                     </div>
