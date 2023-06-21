@@ -46,38 +46,62 @@
     <main>
         <section>
             <div class="ml-3 mt-3">
-                <h1>Our Collection</h1>
+                <h1>Checkout</h1>
+            </div>
+    </main>
+
+    <div class="container">
+        <form class="form-horizontal" action="/checkout" , method="POST">
+            <div class="form-group">
+                <div class="col-lg-6 col-sm-6 col-xs-6">
+                    <div style="text-align:left">
+                        <label class="control-label mt-3">Contact</label>
+                    </div>
+                    <input type="firstname" class="form-control" id="firstname" placeholder="First Name"
+                        name="firstname" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-6 col-sm-6 col-xs-6">
+                    <input type="surname" class="form-control" id="surname" placeholder="Surname"
+                        name="surname required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-6 col-sm-6 col-xs-6">
+                    <input type="email" class="form-control" id="email" placeholder="Email" name="email"
+                        autocorrect="no" autocapitalize="no" required>
+                </div>
             </div>
 
-            <div class="card-deck mb-3">
-                <div class="col">
-                    <div class="card">
-                        <a href="./candle-category.html">
-                            <img src="./images/candles/candle_home.jpg" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title">Candles</h5>
-                            <p class="card-text">Explore a diverse collection of artisanal candles, including
-                                scented
-                                candles, unscented candles, soy candles and more.</p>
-                        </div>
-                    </div>
+            <div class="col-lg-6 col-sm-6 col-xs-6">
+                <div style="text-align:left">
+                    <label class="control-label">Shipping Address</label>
                 </div>
-                <div class="col">
-                    <div class="card">
-                        <a href="./diffuser-category.html">
-                        <img src="images/diffusers/diffuser_home.jpg" class="card-img-top"/>
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title">Diffusers</h5>
-                            <p class="card-text">Handmade diffusers designed to transform your space into a haven of
-                                tranquility and aromatic bliss.</p>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <input type="address" class="form-control" id="address" placeholder="Street Address" name="address"
+                        required>
+                </div>
+                <div class="form-group">
+                    <select style="text-transform: capitalize;" class="form-control" required="required">
+                        <option selected="selected">State/territory</option>
+                        <option>New South Wales</option>
+                        <option>Nothern Territory</option>
+                        <option>Queensland</option>
+                        <option>South Australia</option>
+                        <option>Tasmania</option>
+                        <option>Victoria</option>
+                        <option>Western Australia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="postcode" class="form-control" id="postcode" placeholder="Postcode" name="postcode">
                 </div>
             </div>
-        </section>
-    </main>
+            <!-- END CARD COLLECTION -->
+            <button type="submit" class="btn btn-success mb-3 ml-3">Finish Order</button>
+        </form>
+    </div>
 
     <!-- Footer of the website -->
     <footer class="footer">
