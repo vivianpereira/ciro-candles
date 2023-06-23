@@ -6,26 +6,13 @@
             </div>
             <div class="row text-center text-lg-start">
 
+                {% for product in products %}
                 <div class="col-lg-3 col-md-4 col-6">
-                    <a href="./candle_details_1.html" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="./images/candles/candle1.webp" alt="">
+                    <a href="/detail/{{ product.id }}" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename=product.image) }}" alt="">
                     </a>
                 </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="./candle_details_2.html" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="./images/candles/candle2.webp" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="./candle_details_3.html" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="./images/candles/candle3.webp" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="./candle_details_4.html" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="./images/candles/candle4.webp" alt="">
-                    </a>
-                </div>
+                {% endfor %}
             </div>
         </section>
 {% endblock %}
