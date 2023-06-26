@@ -1,18 +1,18 @@
 {% extends "template.html" %}
 {% block content %}
-        <section>
-            <div class="ml-3 mt-3">
-                <h1>Candles</h1>
-            </div>
-            <div class="row text-center text-lg-start">
+<section>
+    <div class="ml-3 mt-3">
+        <h1>{{ category }}</h1>
+    </div>
+    <div class="row text-center text-lg-start">
 
-                {% for product in products %}
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a href="/detail/{{ product.id }}" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename=product.image) }}" alt="">
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
+        {% for product in products %}
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="/detail/{{ product.id }}" class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename=product.image) }}" alt="">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

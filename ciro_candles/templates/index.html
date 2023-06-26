@@ -1,36 +1,37 @@
 {% extends "template.html" %}
 {% block content %}
-        <section>
-            <div class="ml-3 mt-3">
-                <h1>Our Collection</h1>
-            </div>
+<section>
+    <div class="ml-3 mt-3">
+        <h1>Our Collection</h1>
+    </div>
 
-            <div class="card-deck mb-3">
-                <div class="col">
-                    <div class="card">
-                        <a href="/category/candle">
-                            <img src="{{ url_for('static', filename='images/candles/candle_home.jpg') }}" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title">Candles</h5>
-                            <p class="card-text">Explore a diverse collection of artisanal candles, including
-                                scented
-                                candles, unscented candles, soy candles and more.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <a href="/category/diffuser">
-                            <img src="{{ url_for('static', filename='images/diffusers/diffuser_home.jpg') }}" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title">Diffusers</h5>
-                            <p class="card-text">Handmade diffusers designed to transform your space into a haven of
-                                tranquility and aromatic bliss.</p>
-                        </div>
-                    </div>
+    <div class="card-deck mb-3">
+        <div class="col">
+            <div class="card">
+                <a href="/category/candles">
+                    <img src="{{ url_for('static', filename='images/candles/candle_home.jpg') }}" class="card-img-top">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Candles</h5>
+                    <p class="card-text">Explore a diverse collection of artisanal candles, including
+                        scented
+                        candles, unscented candles, soy candles and more.</p>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="col">
+            <div class="card">
+                <a href="/category/diffusers">
+                    <img src="{{ url_for('static', filename='images/diffusers/diffuser_home.jpg') }}"
+                        class="card-img-top">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Diffusers</h5>
+                    <p class="card-text">Handmade diffusers designed to transform your space into a haven of
+                        tranquility and aromatic bliss.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
