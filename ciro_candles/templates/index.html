@@ -8,7 +8,7 @@
     <div class="card-deck mb-3">
         <div class="col">
             <div class="card">
-                <a href="/category/candles">
+                <a href="{{ url_for('main.category', name='candles')}}">
                     <img src="{{ url_for('static', filename='images/candles/candle_home.jpg') }}" class="card-img-top">
                 </a>
                 <div class="card-body">
@@ -21,7 +21,7 @@
         </div>
         <div class="col">
             <div class="card">
-                <a href="/category/diffusers">
+                <a href="{{ url_for('main.category', name='diffusers')}}">
                     <img src="{{ url_for('static', filename='images/diffusers/diffuser_home.jpg') }}"
                         class="card-img-top">
                 </a>

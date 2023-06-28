@@ -1,63 +1,55 @@
 {% extends "template.html" %}
 {% block content %}
-        <section>
-            <div class="ml-3 mt-3">
-                <h1>Cart</h1>
-            </div>
+<section>
+    <div class="ml-3 mt-3">
+        <h1>Shopping Basket</h1>
+    </div>
 
-            <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12 col-sm-8 col-lg-12">
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Bling Candle - Pyrite Infused
-                                        <div>
-                                            x1
-                                        </div>
-                                        <div>
-                                            <a href="#" class="btn btn-secondary">Remove</a>
-                                        </div>
-                                        <div class="col-md-2 px-0">
-                                            <img src="./images/candles/candle1.webp" class="img-thumbnail"
-                                                alt="quixote">
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Turquoise Howlite Crystal Candle
-                                        <div>
-                                            x2
-                                        </div>
-                                        <div>
-                                            <a href="#" class="btn btn-secondary">Remove</a>
-                                        </div>
-                                        <div class="col-md-2 px-0">
-                                            <img src="./images/candles/candle3.webp" class="img-thumbnail"
-                                                alt="quixote">
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Moonstone Crystal Diffuser
-                                        <div>
-                                            x3
-                                        </div>
-                                        <div>
-                                            <a href="#" class="btn btn-secondary">Remove</a>
-                                        </div>
-                                        <div class="col-md-2 px-0">
-                                            <img src="./images/diffusers/diffuser1.webp" class="img-thumbnail"
-                                                alt="quixote">
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="./checkout.html" class="btn btn-success float-right">Checkout</a>
+    <div class="container">
+        {% if order.products %}
+        <div class="card">
+            <div class="card-body">
+                {% for product in order.products %}
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-lg-12">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div class="col-sm-3">
+                                    {{product.name}}
+                                </div>
+                                <div class="col-sm-2">
+                                    <h5>{{ "$%.2f"|format(product.price) }}</h5>
+                                    <form method="POST" action="{{url_for('main.deletebasketitem')}}">
+                                        <input type="hidden" id="id" name="id" value="{{product.id}}">
+                                        <input type="submit" value="Remove" class="btn btn-primary mb-3">
+                                    </form>
+                                </div>
+                                <div class="col-md-1 px-0">
+                                    <img src="{{ url_for('static', filename=product.image) }}" class="img-thumbnail"
+                                        alt="quixote">
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-        </section>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+                <div class="col-sm-3">
+                    <h5 class="mt-4">Total {{ "$%.2f"|format(totalprice) }}</h5>
+                </div>
+                <div class="row co-12 d-flex mt-2 mb-2">
+                    <a href="{{ url_for('main.deleteorder') }}" class="btn btn-primary mr-2 float-right">Empty
+                        Basket</a>
+                    <a href="{{ url_for('main.checkout')}}" class="btn btn-success float-right">Checkout</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="justify-content-between align-items-center pt-5 pb-5">
+            <h3 class="text-center">Basket is empty</h3>
+        </div>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

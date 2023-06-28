@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- E-commerce name -->
-            <a class="navbar-brand" href="/home">Ciro Candles</a>
+            <a class="navbar-brand" href="{{ url_for('main.home')}}">Ciro Candles</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -25,20 +25,29 @@
             <div class="container d-flex flex-column flex-md-row justify-content-between" id="navbarNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class=" nav-item">
-                        <a class="nav-link" href="/category/candles">Candles</a>
+                        <a class="nav-link" href="{{ url_for('main.category', name='candles')}}">Candles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/category/diffusers">Diffusers</a>
+                        <a class="nav-link" href="{{ url_for('main.category', name='diffusers')}}">Diffusers</a>
                     </li>
                 </ul>
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                     <button class="btn btn-outline my-2 my-sm-0" type="submit">Search</button>
-                    <a class="nav-link text-dark nav-link" href="/basket"><img
+                    <a class="nav-link text-dark nav-link" href="{{ url_for('main.basket')}}"><img
                             src="{{ url_for('static', filename='icons/cart.svg') }}" class="pl-lg-4 pr-2" /></a>
                 </form>
             </div>
         </nav>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-primary" role="alert">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
     </header>
 
     <!-- Contains the main content of the website, divided into sections -->

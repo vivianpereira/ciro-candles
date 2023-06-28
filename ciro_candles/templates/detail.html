@@ -20,9 +20,12 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-text">
-                        <h3>${{ product.price }} AUD</h3>
+                        <h3>{{ "$%.2f"|format(product.price) }}</h3>
                         </p>
-                        <a href="#" class="btn btn-secondary">Add to cart</a>
+                        <form action="{{ url_for('main.basket') }}">
+                            <input type="hidden" id="product_id" name="product_id" value="{{ product.id }}">
+                            <input class="btn btn-primary" type="submit" value="Add to Cart">
+                        </form>
                     </div>
                 </div>
             </div>
