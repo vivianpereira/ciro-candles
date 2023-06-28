@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect
-from .models import products
+from .models import products, Product
 
 bp = Blueprint("main", __name__)
 
@@ -19,21 +19,20 @@ def category(name):
     if name == "candles":
         return render_template(
             "category.html",
-            products=filter(lambda product: product.category == "candle", products),
+            products=Product.query.filter(Product.category == "candles"),
             category=name.capitalize(),
         )
     elif name == "diffusers":
         return render_template(
             "category.html",
-            products=filter(lambda product: product.category == "diffuser", products),
+            products=Product.query.filter(Product.category == "diffuser"),
             category=name.capitalize(),
         )
 
 
 @bp.route("/detail/<id>")
 def detail(id):
-    index = int(id) - 1
-    return render_template("detail.html", product=products[index])
+    return render_template("detail.html", product=Product.query.get(int(id)))
 
 
 @bp.route("/basket/")

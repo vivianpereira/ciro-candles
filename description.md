@@ -20,3 +20,6 @@ Products
 Orders
 Order_Details.
 You must develop code that is well-written with reasonable comments/documentation. Your code must implement HTML, Bootstrap, and Python Flask (with other Flask modules) only. JavaScript may optionally be used as well. Your code will be tested so there should be no unexpected dependencies.
+
+
+-- Perguntar se precisamor criar o seed ou se podemos enviar o banco carregado!
