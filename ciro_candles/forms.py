@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms.fields import SubmitField, StringField
-from wtforms.validators import InputRequired, email, number_range, length
+from wtforms.validators import InputRequired, email, length
 
 
 # form used in basket
@@ -32,4 +32,4 @@ class CheckoutForm(FlaskForm):
         "Postcode",
         validators=[InputRequired(), length(3, 4, "Invalid Postcode")],
     )
-    submit = SubmitField("Finish order")
+    submit = SubmitField("Finish Order")

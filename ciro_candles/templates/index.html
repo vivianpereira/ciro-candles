@@ -1,13 +1,31 @@
 {% extends "template.html" %}
+
+{% block head %}
+<div class="jumbotron jumbotron-fluid card card-image" style="background-color: lightgray;">
+    <div class="text-center text-white py-5 px-4">
+        <div>
+            <h1 class="display-2">Welcome to Ciro Candles</h1>
+            <p class="display-4 text-light">Hand Made in Gold Coast</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
 <section>
+    <div class="text-center">
+        <p class="font-italic">Transform your space into a sanctuary of warmth and elegance with our handmade candles
+            and diffusers. Our
+            unique selection, crafted
+            with high-quality and natural materials, adding a touch of sophistication to any home.</p>
+    </div>
     <div class="ml-3 mt-3">
         <h1>Our Collection</h1>
     </div>
 
     <div class="card-deck mb-3">
         <div class="col">
-            <div class="card">
+            <div class="card" style="max-width: 700px">
                 <a href="{{ url_for('main.category', name='candles')}}">
                     <img src="{{ url_for('static', filename='images/candles/candle_home.jpg') }}" class="card-img-top">
                 </a>
@@ -20,7 +38,7 @@
             </div>
         </div>
         <div class="col">
-            <div class="card">
+            <div class="card" style="max-width: 700px">
                 <a href="{{ url_for('main.category', name='diffusers')}}">
                     <img src="{{ url_for('static', filename='images/diffusers/diffuser_home.jpg') }}"
                         class="card-img-top">

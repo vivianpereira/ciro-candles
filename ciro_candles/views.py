@@ -33,6 +33,16 @@ def category(name):
         )
 
 
+@bp.route("/search/", methods=["POST", "GET"])
+def search():
+    query = request.form["query"]
+    return render_template(
+        "category.html",
+        products=Product.query.filter(Product.name.like("%" + query + "%")).all(),
+        category="Search results:",
+    )
+
+
 @bp.route("/detail/<int:id>")
 def detail(id):
     return render_template("detail.html", product=Product.query.get(id))
@@ -114,7 +124,7 @@ def deletebasketitem():
 def deleteorder():
     if "order_id" in session:
         del session["order_id"]
-        flash("All items deleted")
+        flash("All items have been deleted")
     return redirect(url_for("main.index"))
 
 
@@ -140,7 +150,7 @@ def checkout():
                 db.session.commit()
                 del session["order_id"]
                 flash(
-                    "Thank you! One of our awesome team members will contact you soon..."
+                    "Thank you! Your order have been completed! One of our awesome team members will contact you soon..."
                 )
                 return redirect(url_for("main.home"))
             except:
