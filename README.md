@@ -1,10 +1,6 @@
 # Ciro candles
 
 `Ciro candles` is an e-commerce of handmade candles and diffusers.
-The project contains a working example of a Flask project with features:
-
-* flask project structure, easy to extend and secondary develop
-* always update and use newest packages, python features
 
 ## How to start
 
